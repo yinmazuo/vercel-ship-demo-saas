@@ -1,10 +1,9 @@
 "use client";
 
 import {
+  Show,
   SignInButton,
   SignUpButton,
-  SignedIn,
-  SignedOut,
   UserButton
 } from "@clerk/nextjs";
 
@@ -24,7 +23,7 @@ export function AuthPanel({ enabled }: { enabled: boolean }) {
 
   return (
     <div className="auth-block">
-      <SignedOut>
+      <Show when="signed-out">
         <p className="eyebrow">Authentication</p>
         <h2>Sign in to turn the dashboard shell into a live workspace.</h2>
         <div className="auth-actions">
@@ -39,8 +38,8 @@ export function AuthPanel({ enabled }: { enabled: boolean }) {
             </button>
           </SignUpButton>
         </div>
-      </SignedOut>
-      <SignedIn>
+      </Show>
+      <Show when="signed-in">
         <div className="auth-header">
           <div>
             <p className="eyebrow">Authentication</p>
@@ -52,7 +51,7 @@ export function AuthPanel({ enabled }: { enabled: boolean }) {
           Use this screen as the base for protected pages, account management, and tenant-aware dashboards
           once the plan is approved.
         </p>
-      </SignedIn>
+      </Show>
     </div>
   );
 }
