@@ -1,2 +1,3 @@
-# vercel-ship-demo-saas
-vercel-ship skill validation demo
+# nextjs-saas-starter
+
+A SaaS-oriented starter with dashboard copy, auth and database placeholders, and a build-safe baseline for `clerk + neon`.
